@@ -1,163 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Daniel Oteng | Personal Website</title>
-
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #07111f, #12345b);
-      color: white;
-      line-height: 1.6;
-    }
-
-    header {
-      text-align: center;
-      padding: 60px 20px;
-      background: rgba(0,0,0,0.25);
-    }
-
-    header h1 {
-      font-size: 42px;
-      margin-bottom: 10px;
-    }
-
-    header p {
-      font-size: 19px;
-      color: #cfe5ff;
-    }
-
-    nav {
-      text-align: center;
-      padding: 15px;
-      background: #06101d;
-      position: sticky;
-      top: 0;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 12px;
-      font-weight: bold;
-    }
-
-    nav a:hover {
-      color: #55b7ff;
-    }
-
-    section {
-      max-width: 900px;
-      margin: 30px auto;
-      padding: 30px 20px;
-      background: rgba(255,255,255,0.08);
-      border-radius: 18px;
-    }
-
-    h2 {
-      color: #55b7ff;
-      margin-bottom: 15px;
-      font-size: 28px;
-    }
-
-    .info {
-      display: grid;
-      gap: 12px;
-    }
-
-    .card {
-      background: rgba(0,0,0,0.2);
-      padding: 18px;
-      border-radius: 12px;
-    }
-
-    .contact a {
-      color: #55b7ff;
-      text-decoration: none;
-    }
-
-    footer {
-      text-align: center;
-      padding: 30px;
-      background: #06101d;
-      margin-top: 40px;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daniel Oteng | Personal Website</title>
+<style>
+*{box-sizing:border-box;scroll-behavior:smooth}
+body{margin:0;font-family:Arial,sans-serif;background:#081a2e;color:white;line-height:1.7}
+header{text-align:center;padding:70px 20px;background:#061525}
+header h1{font-size:52px;margin:0 0 15px}
+header p{font-size:24px;color:#b9d8ff}
+nav{position:sticky;top:0;background:#041322;padding:18px;text-align:center;z-index:5}
+nav a{color:white;text-decoration:none;font-weight:bold;font-size:18px;margin:0 18px}
+section{max-width:1000px;margin:35px auto;padding:35px;background:#1c334d;border-radius:25px}
+h2{color:#58b6ff;font-size:34px}
+.card{background:#122943;padding:22px;border-radius:18px;margin-top:15px}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.gallery img{width:100%;height:300px;object-fit:cover;border-radius:16px;display:block}
+footer{text-align:center;padding:35px;background:#061525;margin-top:40px}
+@media(max-width:600px){header h1{font-size:40px}header p{font-size:20px}section{margin:20px 10px;padding:25px}nav a{margin:0 8px;font-size:15px}}
+</style>
 </head>
-
 <body>
 
-  <header>
-    <h1>Daniel Oteng</h1>
-    <p>Student • Future Engineer • Website Developer</p>
-  </header>
+<header>
+<h1>Daniel Oteng</h1>
+<p>Student • Future Engineer • Website Developer</p>
+</header>
 
-  <nav>
-    <a href="#about">About</a>
-    <a href="#details">Details</a>
-    <a href="#contact">Contact</a>
-  </nav>
+<nav>
+<a href="#about">About</a>
+<a href="#details">Details</a>
+<a href="#gallery">Gallery</a>
+<a href="#contact">Contact</a>
+</nav>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>
-      Hello! My name is Daniel Oteng. I am a student who is interested
-      in technology, engineering and developing websites. I am learning
-      new skills and working towards becoming a successful engineer.
-    </p>
-  </section>
+<section id="about">
+<h2>About Me</h2>
+<p>Hello! My name is Daniel Oteng. I am a student who is interested in technology, engineering and developing websites. I am learning new skills and working towards becoming a successful engineer.</p>
+</section>
 
-  <section id="details">
-    <h2>My Details</h2>
+<section id="details">
+<h2>My Details</h2>
+<div class="card"><b>Name:</b> Daniel Oteng</div>
+<div class="card"><b>Interests:</b> Engineering, Technology, Websites and Gaming</div>
+<div class="card"><b>Goal:</b> To become a successful engineer and technology professional.</div>
+</section>
 
-    <div class="info">
-      <div class="card">
-        <strong>Name:</strong> Daniel Oteng
-      </div>
+<section id="gallery">
+<h2>My Gallery 📸</h2>
+<div class="gallery">
+<img src="photo1.jpg" alt="Daniel">
+<img src="photo2.jpg" alt="Daniel">
+<img src="photo3.jpg" alt="Daniel with a friend">
+<img src="photo4.jpg" alt="Daniel">
+<img src="photo5.png" alt="Daniel">
+<img src="photo6.jpg" alt="Daniel">
+<img src="photo7.jpg" alt="Daniel">
+<img src="photo8.jpg" alt="Daniel">
+</div>
+</section>
 
-      <div class="card">
-        <strong>Date of Birth:</strong> 9 March 2010
-      </div>
+<section id="contact">
+<h2>Contact Me</h2>
+<p>If you would like to contact me, you can reach me through my contact details.</p>
+</section>
 
-      <div class="card">
-        <strong>Location:</strong> Asuom, Eastern Region, Ghana
-      </div>
-
-      <div class="card">
-        <strong>Interest:</strong> Engineering, Technology and Web Development
-      </div>
-    </div>
-  </section>
-
-  <section id="contact" class="contact">
-    <h2>Contact Me</h2>
-
-    <p>
-      <strong>Email:</strong>
-      <a href="mailto:danieloteng570@gmail.com">
-        danieloteng570@gmail.com
-      </a>
-    </p>
-
-    <p>
-      <strong>Phone:</strong>
-      <a href="tel:0248445048">
-        0248445048
-      </a>
-    </p>
-  </section>
-
-  <footer>
-    <p>© 2026 Daniel Oteng. All Rights Reserved.</p>
-  </footer>
+<footer>
+<p>© 2026 Daniel Oteng. All rights reserved.</p>
+</footer>
 
 </body>
 </html>
