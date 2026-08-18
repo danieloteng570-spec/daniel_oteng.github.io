@@ -3,54 +3,68 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Daniel Oteng | My Personal Website</title>
+<meta name="description" content="Daniel Oteng — Technology, Engineering and Web Design Portfolio">
+<title>Daniel Oteng | Digital Portfolio</title>
 <style>
+:root{--bg:#050816;--panel:#0b1328;--text:#f7f9ff;--muted:#aab7d0;--a:#61dafb;--b:#7c5cff;--line:#203354}
 *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
-body{font-family:Arial,sans-serif;background:#06111f;color:#fff;line-height:1.6}
-nav{position:sticky;top:0;z-index:10;background:#020a14;padding:18px;text-align:center}
-nav a{color:#fff;text-decoration:none;font-weight:700;margin:0 12px}
-nav a:hover{color:#58a6ff}
-section{padding:70px 20px;max-width:1050px;margin:auto}
-.hero{text-align:center;min-height:75vh;display:flex;flex-direction:column;justify-content:center;align-items:center}
-.hero h1{font-size:clamp(40px,9vw,72px);margin-bottom:12px}.hero h1 span{color:#58a6ff}
-.hero p{font-size:20px;color:#c8d6e5}
-.btn{display:inline-block;margin-top:25px;padding:12px 22px;border-radius:30px;background:#58a6ff;color:#06111f;text-decoration:none;font-weight:700}
-h2{text-align:center;font-size:34px;margin-bottom:30px}
-.about,.contact{background:#0b1b2d;border-radius:22px;padding:30px}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:18px}
-.card{background:#0b1b2d;padding:24px;border-radius:18px;text-align:center;border:1px solid #18324d}
-.card h3{margin-bottom:8px;color:#58a6ff}
-.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
-.gallery img{width:100%;height:320px;object-fit:cover;border-radius:18px;display:block;box-shadow:0 8px 25px #0008}
-.contact{text-align:center}.contact a{color:#58a6ff;text-decoration:none}
-footer{text-align:center;padding:25px;color:#9fb0c0}
-@media(max-width:600px){nav a{margin:0 6px;font-size:14px}.gallery img{height:300px}}
+body{font-family:Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.65;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:-30%;z-index:-2;background:radial-gradient(circle at 20% 20%,#17436b 0,transparent 30%),radial-gradient(circle at 80% 65%,#341b70 0,transparent 30%);filter:blur(50px);opacity:.65}
+body:after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background-image:linear-gradient(#fff1 1px,transparent 1px),linear-gradient(90deg,#fff1 1px,transparent 1px);background-size:38px 38px}
+nav{position:fixed;top:0;left:0;right:0;z-index:20;padding:15px 6%;display:flex;justify-content:space-between;align-items:center;background:#050816d9;backdrop-filter:blur(15px);border-bottom:1px solid #fff1}
+.logo{color:var(--a);text-decoration:none;font-weight:900;font-size:22px}.links{display:flex;gap:22px}.links a{color:#fff;text-decoration:none;font-weight:700;font-size:14px}.links a:hover{color:var(--a)}
+.hero{min-height:100vh;padding:120px 7% 70px;display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center}
+.badge{display:inline-block;color:var(--a);border:1px solid #61dafb55;background:#61dafb0d;padding:8px 15px;border-radius:99px;margin-bottom:20px;animation:pulse 2.5s infinite}
+h1{font-size:clamp(48px,8vw,92px);line-height:1.02;margin-bottom:18px}.gradient{background:linear-gradient(90deg,var(--a),#fff,var(--b));background-size:200%;-webkit-background-clip:text;color:transparent;animation:shine 4s linear infinite}
+.hero p{max-width:650px;color:var(--muted);font-size:19px}.buttons{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}
+.btn{padding:13px 21px;border-radius:99px;text-decoration:none;font-weight:800;transition:.3s;border:1px solid #fff2}.primary{background:linear-gradient(90deg,var(--a),var(--b));color:#050816}.secondary{background:#fff0;color:#fff}.btn:hover{transform:translateY(-4px);box-shadow:0 15px 40px #0009}
+.hero-photo{display:flex;justify-content:center;position:relative}.hero-photo:before{content:"";position:absolute;width:75%;height:75%;background:linear-gradient(135deg,var(--a),var(--b));filter:blur(60px);opacity:.4}
+.hero-photo img{position:relative;width:min(390px,85vw);height:480px;object-fit:cover;border-radius:35px;border:2px solid #fff4;box-shadow:0 25px 80px #000;animation:float 5s ease-in-out infinite}
+section{padding:95px 7%}.container{max-width:1100px;margin:auto}.title{text-align:center;margin-bottom:45px}.title small{color:var(--a);font-weight:900;letter-spacing:2px;text-transform:uppercase}.title h2{font-size:clamp(32px,5vw,52px);margin-top:6px}
+.panel{background:#ffffff08;border:1px solid var(--line);border-radius:25px;padding:30px;backdrop-filter:blur(10px)}.panel p{color:var(--muted);margin-bottom:14px}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:22px}.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.card{background:linear-gradient(145deg,#101b34,#080e1e);border:1px solid var(--line);border-radius:22px;padding:25px;transition:.35s}.card:hover{transform:translateY(-9px);border-color:#61dafb88;box-shadow:0 20px 50px #0009}.icon{font-size:34px;margin-bottom:12px}.card h3{margin-bottom:7px}.card p{color:var(--muted);font-size:14px}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.gallery figure{overflow:hidden;border-radius:22px;border:1px solid var(--line);background:#0b1328}.gallery img{width:100%;height:350px;object-fit:cover;display:block;transition:.5s}.gallery figure:hover img{transform:scale(1.08)}.gallery figcaption{padding:11px 14px;color:var(--muted)}
+.contact{text-align:center}.contact a{color:var(--a);text-decoration:none;font-weight:800}.contact p{color:var(--muted);margin:8px}
+footer{text-align:center;padding:35px 20px;border-top:1px solid var(--line);color:var(--muted)}
+.top{position:fixed;right:18px;bottom:18px;width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,var(--a),var(--b));color:#050816;text-decoration:none;font-weight:900}
+.reveal{animation:reveal 1s ease both}.d1{animation-delay:.15s}.d2{animation-delay:.3s}.d3{animation-delay:.45s}
+@keyframes reveal{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
+@keyframes float{50%{transform:translateY(-14px) rotate(1deg)}}@keyframes pulse{50%{box-shadow:0 0 0 12px transparent}}@keyframes shine{to{background-position:200% center}}
+@media(max-width:850px){.hero{grid-template-columns:1fr;text-align:center;padding-top:115px}.hero p{margin:auto}.buttons{justify-content:center}.hero-photo{order:-1}.hero-photo img{height:360px}.about{grid-template-columns:1fr}.cards{grid-template-columns:repeat(2,1fr)}.gallery{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.links{display:none}.logo{font-size:19px}section{padding:70px 5%}.cards,.gallery{grid-template-columns:1fr}.gallery img{height:380px}}
 </style>
 </head>
 <body>
-<nav>
-<a href="#home">Home</a><a href="#about">About</a><a href="#skills">Skills</a><a href="#gallery">Gallery</a><a href="#contact">Contact</a>
-</nav>
-<section id="home" class="hero">
-<h1>Hello, I'm <span>Daniel</span> 👋</h1><p>Welcome to my personal website.</p>
-<a class="btn" href="#about">Get to know me</a>
-</section>
-<section id="about"><h2>About Me</h2><div class="about">
-<p>Hi! My name is <strong>Daniel Oteng</strong>. I am a young Ghanaian who is interested in technology, learning new things and building my future. I enjoy using computers and creating websites, and I hope to develop strong technical and engineering skills as I grow.</p>
-</div></section>
-<section id="skills"><h2>My Skills</h2><div class="cards">
-<div class="card"><h3>Web Design</h3><p>Learning HTML, CSS and how websites are built.</p></div>
-<div class="card"><h3>Technology</h3><p>Interested in computers, phones and digital tools.</p></div>
-<div class="card"><h3>Creativity</h3><p>I enjoy creating and trying new ideas.</p></div>
-<div class="card"><h3>Problem Solving</h3><p>I like learning how to fix problems and improve my work.</p></div>
-</div></section>
-<section id="gallery"><h2>My Gallery 📸</h2><div class="gallery">
-<img src="daniel1.jpg" alt="Daniel's photo"><img src="daniel2.jpg" alt="Daniel's photo">
-<img src="daniel3.jpg" alt="Daniel's photo"><img src="daniel4.png" alt="Daniel's photo">
-<img src="daniel5.jpg" alt="Daniel's photo">
-</div></section>
-<section id="contact" class="contact"><h2>Contact Me</h2>
-<p>Email: <a href="mailto:danieloteng570@gmail.com">danieloteng570@gmail.com</a></p>
-<p>Phone: <a href="tel:0248445048">0248445048</a></p></section>
-<footer>© 2026 Daniel Oteng. All rights reserved.</footer>
-</body></html>
+<nav><a class="logo" href="#home">DANIEL<span style="color:#fff">.</span></a><div class="links"><a href="#about">About</a><a href="#skills">Skills</a><a href="#goals">Goals</a><a href="#gallery">Gallery</a><a href="#contact">Contact</a></div></nav>
+
+<header id="home" class="hero">
+<div class="reveal"><div class="badge">✦ DIGITAL PORTFOLIO</div><h1>I'm <span class="gradient">Daniel Oteng</span></h1><p>Technology • Engineering • Web Design</p><p>I am a young Ghanaian student passionate about learning, creating and building a better future through technology.</p><div class="buttons"><a class="btn primary" href="#about">Explore My Story ↓</a><a class="btn secondary" href="#contact">Contact Me</a></div></div>
+<div class="hero-photo reveal d1"><img src="daniel1.jpg" alt="Daniel Oteng"></div>
+</header>
+
+<section id="about"><div class="container"><div class="title"><small>Who I am</small><h2>About Me</h2></div><div class="about"><div class="panel reveal"><p>Hello! My name is <strong>Daniel Oteng</strong>. I am a young student from Ghana who is curious about technology and how things work.</p><p>I enjoy learning, experimenting with computers and creating websites. Every new skill I learn brings me closer to the future I want.</p></div><div class="panel reveal d1"><p>I am hardworking, determined and always ready to improve. My dream is to become a successful engineer and use technology to solve real-life problems.</p><p><strong>My motto:</strong> Learn today. Build tomorrow. 🚀</p></div></div></div></section>
+
+<section id="skills"><div class="container"><div class="title"><small>What I enjoy</small><h2>My Skills</h2></div><div class="cards">
+<div class="card reveal"><div class="icon">💻</div><h3>Web Design</h3><p>Building and styling websites with HTML and CSS.</p></div>
+<div class="card reveal d1"><div class="icon">⚙️</div><h3>Technology</h3><p>Exploring computers, phones and digital tools.</p></div>
+<div class="card reveal d2"><div class="icon">🧠</div><h3>Problem Solving</h3><p>Thinking creatively to understand and solve problems.</p></div>
+<div class="card reveal d3"><div class="icon">🤝</div><h3>Teamwork</h3><p>Learning, sharing ideas and working with others.</p></div>
+</div></div></section>
+
+<section id="goals"><div class="container"><div class="title"><small>My future</small><h2>My Goals 🎯</h2></div><div class="panel reveal"><p>My goal is to become a successful engineer with strong skills in technology. I want to keep learning web development and other technical skills, create useful projects and make a positive impact on people around me.</p></div></div></section>
+
+<section id="gallery"><div class="container"><div class="title"><small>Moments</small><h2>My Gallery 📸</h2></div><div class="gallery">
+<figure class="reveal"><img src="daniel1.jpg" alt="Daniel"><figcaption>Daniel</figcaption></figure>
+<figure class="reveal d1"><img src="daniel2.jpg" alt="Daniel"><figcaption>Daniel</figcaption></figure>
+<figure class="reveal d2"><img src="daniel3.jpg" alt="Daniel"><figcaption>Daniel</figcaption></figure>
+<figure class="reveal"><img src="daniel4.png" alt="Daniel"><figcaption>Daniel</figcaption></figure>
+<figure class="reveal d1"><img src="daniel5.jpg" alt="Daniel"><figcaption>Daniel</figcaption></figure>
+</div></div></section>
+
+<section id="contact"><div class="container"><div class="title"><small>Let's connect</small><h2>Contact Me</h2></div><div class="panel contact reveal"><p>📧 <a href="mailto:danieloteng570@gmail.com">danieloteng570@gmail.com</a></p><p>📞 <a href="tel:0248445048">0248445048</a></p><p>📍 Ghana</p><div class="buttons" style="justify-content:center"><a class="btn primary" href="mailto:danieloteng570@gmail.com">Send Me an Email</a><a class="btn secondary" href="tel:0248445048">Call Me</a></div></div></div></section>
+
+<footer>© 2026 Daniel Oteng • Digital Portfolio</footer>
+<a class="top" href="#home" aria-label="Back to top">↑</a>
+</body>
+</html>
