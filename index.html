@@ -19,7 +19,56 @@ h1{font-size:clamp(48px,8vw,92px);line-height:1.02;margin-bottom:18px}.gradient{
 .hero p{max-width:650px;color:var(--muted);font-size:19px}.buttons{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}
 .btn{padding:13px 21px;border-radius:99px;text-decoration:none;font-weight:800;transition:.3s;border:1px solid #fff2}.primary{background:linear-gradient(90deg,var(--a),var(--b));color:#050816}.secondary{background:#fff0;color:#fff}.btn:hover{transform:translateY(-4px);box-shadow:0 15px 40px #0009}
 .hero-photo{display:flex;justify-content:center;position:relative}.hero-photo:before{content:"";position:absolute;width:75%;height:75%;background:linear-gradient(135deg,var(--a),var(--b));filter:blur(60px);opacity:.4}
-.hero-photo img{position:relative;width:min(390px,85vw);height:480px;object-fit:cover;border-radius:35px;border:2px solid #fff4;box-shadow:0 25px 80px #000;animation:float 5s ease-in-out infinite}
+..hero-photo img{
+position:relative;
+width:min(390px,85vw);
+height:480px;
+object-fit:cover;
+border-radius:35px;
+padding:6px;
+background:linear-gradient(135deg,var(--a),var(--b),#fff,var(--a));
+background-size:300% 300%;
+box-shadow:
+0 0 0 2px #ffffff33,
+0 0 25px #61dafb88,
+0 25px 80px #000;
+animation:float 5s ease-in-out infinite,frameGlow 5s ease-in-out infinite;
+}
+
+.gallery figure{
+position:relative;
+overflow:hidden;
+border-radius:24px;
+padding:5px;
+background:linear-gradient(135deg,var(--a),var(--b),#fff,var(--a));
+background-size:300% 300%;
+border:0;
+box-shadow:0 10px 35px #0008;
+transition:.4s;
+}
+
+.gallery figure:hover{
+transform:translateY(-8px) scale(1.02);
+box-shadow:0 0 30px #61dafb88,0 20px 50px #000;
+}
+
+.gallery img{
+width:100%;
+height:350px;
+object-fit:cover;
+display:block;
+border-radius:19px;
+transition:.5s;
+}
+
+.gallery figure:hover img{
+transform:scale(1.06);
+}
+
+@keyframes frameGlow{
+0%,100%{background-position:0% 50%}
+50%{background-position:100% 50%}
+}
 section{padding:95px 7%}.container{max-width:1100px;margin:auto}.title{text-align:center;margin-bottom:45px}.title small{color:var(--a);font-weight:900;letter-spacing:2px;text-transform:uppercase}.title h2{font-size:clamp(32px,5vw,52px);margin-top:6px}
 .panel{background:#ffffff08;border:1px solid var(--line);border-radius:25px;padding:30px;backdrop-filter:blur(10px)}.panel p{color:var(--muted);margin-bottom:14px}
 .about{display:grid;grid-template-columns:1fr 1fr;gap:22px}.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
